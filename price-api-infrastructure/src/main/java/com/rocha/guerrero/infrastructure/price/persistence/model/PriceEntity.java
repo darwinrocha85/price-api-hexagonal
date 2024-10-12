@@ -3,7 +3,7 @@ package com.rocha.guerrero.infrastructure.price.persistence.model;
 import jakarta.persistence.*;
 
 import java.math.BigDecimal;
-import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.util.Objects;
 
 @Entity
@@ -12,21 +12,39 @@ public class PriceEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+
+    @Column(name = "brand_id")
     private Long brandId;
-    private LocalDate startDate;
-    private LocalDate endDate;
+
+    @Column(name = "start_date")
+    private LocalDateTime startDate;
+
+    @Column(name = "end_date")
+    private LocalDateTime endDate;
+
+    @Column(name = "price_list")
     private int priceList;
+
+    @Column(name = "product_id")
+    private long productId;
+
+    @Column(name = "priority")
     private int priority;
+
+    @Column(name = "price")
     private BigDecimal price;
+
+    @Column(name = "curr")
     private String currency;
 
     public PriceEntity() {}
 
     public PriceEntity(Long id,
                        Long brandId,
-                       LocalDate startDate,
-                       LocalDate endDate,
+                       LocalDateTime startDate,
+                       LocalDateTime endDate,
                        int priceList,
+                       long productId,
                        int priority,
                        BigDecimal price,
                        String currency) {
@@ -35,6 +53,7 @@ public class PriceEntity {
         this.startDate = startDate;
         this.endDate = endDate;
         this.priceList = priceList;
+        this.productId = productId;
         this.priority = priority;
         this.price = price;
         this.currency = currency;
@@ -56,19 +75,19 @@ public class PriceEntity {
         this.brandId = brandId;
     }
 
-    public LocalDate getStartDate() {
+    public LocalDateTime getStartDate() {
         return startDate;
     }
 
-    public void setStartDate(LocalDate startDate) {
+    public void setStartDate(LocalDateTime startDate) {
         this.startDate = startDate;
     }
 
-    public LocalDate getEndDate() {
+    public LocalDateTime getEndDate() {
         return endDate;
     }
 
-    public void setEndDate(LocalDate endDate) {
+    public void setEndDate(LocalDateTime endDate) {
         this.endDate = endDate;
     }
 
@@ -102,6 +121,14 @@ public class PriceEntity {
 
     public void setCurrency(String currency) {
         this.currency = currency;
+    }
+
+    public long getProductId() {
+        return productId;
+    }
+
+    public void setProductId(long productId) {
+        this.productId = productId;
     }
 
     @Override

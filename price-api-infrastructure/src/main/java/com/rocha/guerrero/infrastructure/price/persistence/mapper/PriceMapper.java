@@ -14,6 +14,7 @@ public class PriceMapper {
                 entity.getStartDate(),
                 entity.getEndDate(),
                 entity.getPriceList(),
+                entity.getProductId(),
                 entity.getPriority(),
                 entity.getPrice(),
                 entity.getCurrency()
@@ -28,6 +29,7 @@ public class PriceMapper {
                 price.startDate(),
                 price.endDate(),
                 price.priceList(),
+                price.productId(),
                 price.priority(),
                 price.price(),
                 price.currency());

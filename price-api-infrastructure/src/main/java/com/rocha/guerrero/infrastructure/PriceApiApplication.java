@@ -8,7 +8,7 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 import java.math.BigDecimal;
-import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.Arrays;
 import java.util.List;
@@ -17,6 +17,7 @@ import java.util.List;
 public class PriceApiApplication  implements CommandLineRunner {
 
 	private final PriceInteractionPort port;
+
 	private final DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd-HH.mm.ss");
 
     public PriceApiApplication(PriceInteractionPort port) {
@@ -34,34 +35,38 @@ public class PriceApiApplication  implements CommandLineRunner {
 		List<Price> entities = Arrays.asList(
 				PriceCreateReq.toDomain(new PriceCreateReq(
 						1L,
-						LocalDate.parse("2020-06-14-00.00.00", formatter),
-						LocalDate.parse("2020-12-31-23.59.59", formatter),
+						LocalDateTime.parse("2020-06-14-00.00.00", formatter),
+						LocalDateTime.parse("2020-12-31-23.59.59", formatter),
 						1,
+						35455,
 						0,
 						new BigDecimal("35.50"),
 						"EUR"
 				)),
 				PriceCreateReq.toDomain(new PriceCreateReq(
 						1L,
-						LocalDate.parse("2020-06-14-15.00.00", formatter),
-						LocalDate.parse("2020-06-14-18.30.00", formatter),
+						LocalDateTime.parse("2020-06-14-15.00.00", formatter),
+						LocalDateTime.parse("2020-06-14-18.30.00", formatter),
 						2,
+						35455,
 						1,
 						new BigDecimal("25.45"),
 						"EUR"  )),
 				PriceCreateReq.toDomain(new PriceCreateReq(
 						1L,
-						LocalDate.parse("2020-06-15-00.00.00", formatter),
-						LocalDate.parse("2020-06-15-11.00.00", formatter),
+						LocalDateTime.parse("2020-06-15-00.00.00", formatter),
+						LocalDateTime.parse("2020-06-15-11.00.00", formatter),
 						3,
+						35455,
 						1,
 						new BigDecimal("30.50"),
 						"EUR")),
 				PriceCreateReq.toDomain(new PriceCreateReq(
 						1L,
-						LocalDate.parse("2020-06-15-16.00.00", formatter),
-						LocalDate.parse("2020-12-31-23.59.59", formatter),
+						LocalDateTime.parse("2020-06-15-16.00.00", formatter),
+						LocalDateTime.parse("2020-12-31-23.59.59", formatter),
 						4,
+						35455,
 						1,
 						new BigDecimal("38.95"),
 						"EUR" ))
