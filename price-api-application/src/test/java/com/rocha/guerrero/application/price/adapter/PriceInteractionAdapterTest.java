@@ -2,7 +2,6 @@ package com.rocha.guerrero.application.price.adapter;
 
 import com.rocha.guerrero.application.price.port.PricePort;
 import com.rocha.guerrero.domain.price.model.Price;
-import static org.junit.jupiter.api.Assertions.assertEquals;
 import org.junit.jupiter.api.Test;
 
 import java.math.BigDecimal;
@@ -10,6 +9,7 @@ import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.List;
 
+import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.mockito.Mockito.*;
 
 class PriceInteractionAdapterTest {

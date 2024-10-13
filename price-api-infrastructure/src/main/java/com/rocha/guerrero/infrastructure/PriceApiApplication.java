@@ -1,8 +1,8 @@
 package com.rocha.guerrero.infrastructure;
 
 import com.rocha.guerrero.application.price.port.PriceInteractionPort;
-import com.rocha.guerrero.infrastructure.price.rest.dto.PriceCreateReq;
 import com.rocha.guerrero.domain.price.model.Price;
+import com.rocha.guerrero.infrastructure.price.rest.dto.PriceCreateReq;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
