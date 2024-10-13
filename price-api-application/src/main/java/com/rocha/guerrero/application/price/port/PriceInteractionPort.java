@@ -9,4 +9,5 @@ public interface PriceInteractionPort {
     List<Price> findAll();
     void saveAll(List<Price> prices);
 
+    void deleteAll();
 }

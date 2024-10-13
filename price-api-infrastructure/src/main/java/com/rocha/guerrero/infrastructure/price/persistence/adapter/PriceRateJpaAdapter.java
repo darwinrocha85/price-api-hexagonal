@@ -18,7 +18,7 @@ public class PriceRateJpaAdapter implements PriceRatePort {
     private final PriceJpaRepository repository;
 
     @Override
-    public List<Price> findAllRate(Long brandId, Long productId, LocalDateTime applicationDate) {
+    public List<Price> findAllRate(long brandId, long productId, LocalDateTime applicationDate) {
         return PriceMapper.toDomain(repository.findAllRate(brandId,productId,applicationDate));
     }
 }

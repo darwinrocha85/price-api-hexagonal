@@ -5,7 +5,7 @@ import java.time.LocalDateTime;
 
 public record Price(
         Long id,
-        Long brandId,
+        long brandId,
         LocalDateTime startDate,
         LocalDateTime endDate,
         int priceList,

@@ -5,7 +5,7 @@ import com.rocha.guerrero.domain.price.model.Price;
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
 
-public record PriceCreateReq(Long brandId,
+public record PriceCreateReq(long brandId,
                              LocalDateTime startDate,
                              LocalDateTime endDate,
                              int priceList,
@@ -14,15 +14,16 @@ public record PriceCreateReq(Long brandId,
                              BigDecimal price,
                              String currency) {
     public static Price toDomain(PriceCreateReq price) {
-        return new Price(null,
-                            price.brandId,
-                            price.startDate,
-                            price.endDate,
-                            price.priceList,
-                            price.productId,
-                            price.priority,
-                            price.price,
-                            price.currency
+        return new Price(
+                null,
+                price.brandId,
+                price.startDate,
+                price.endDate,
+                price.priceList,
+                price.productId,
+                price.priority,
+                price.price,
+                price.currency
         );
     }
 }

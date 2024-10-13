@@ -9,7 +9,7 @@ import java.util.List;
 
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public record PriceRes(Long id,
-                       Long brandId,
+                       long brandId,
                        LocalDateTime startDate,
                        LocalDateTime endDate,
                        int priceList,

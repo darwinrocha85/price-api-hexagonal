@@ -14,7 +14,7 @@ public class PriceEntity {
     private Long id;
 
     @Column(name = "brand_id")
-    private Long brandId;
+    private long brandId;
 
     @Column(name = "start_date")
     private LocalDateTime startDate;
@@ -40,7 +40,7 @@ public class PriceEntity {
     public PriceEntity() {}
 
     public PriceEntity(Long id,
-                       Long brandId,
+                       long brandId,
                        LocalDateTime startDate,
                        LocalDateTime endDate,
                        int priceList,
@@ -59,7 +59,7 @@ public class PriceEntity {
         this.currency = currency;
     }
 
-    public Long getId() {
+    public long getId() {
         return id;
     }
 
@@ -67,11 +67,11 @@ public class PriceEntity {
         this.id = id;
     }
 
-    public Long getBrandId() {
+    public long getBrandId() {
         return brandId;
     }
 
-    public void setBrandId(Long brandId) {
+    public void setBrandId(long brandId) {
         this.brandId = brandId;
     }
 
@@ -132,7 +132,20 @@ public class PriceEntity {
     }
 
     @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        PriceEntity that = (PriceEntity) o;
+        return Objects.equals(price, that.price) &&
+                Objects.equals(id, that.id) &&
+                Objects.equals(productId, that.productId) &&
+                Objects.equals(brandId, that.brandId) &&
+                Objects.equals(startDate, that.startDate);
+    }
+
+    // Sobreescribe el método hashCode
+    @Override
     public int hashCode() {
-        return  31 * 17 + Objects.hashCode(id);
+        return Objects.hash(id, productId, brandId, price, startDate);
     }
 }

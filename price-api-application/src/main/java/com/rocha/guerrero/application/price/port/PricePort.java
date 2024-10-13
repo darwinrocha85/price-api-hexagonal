@@ -8,4 +8,5 @@ public interface PricePort {
     Price create(Price price);
     List<Price> findAll();
     void saveAll(List<Price> prices);
+    void deleteAll();
 }

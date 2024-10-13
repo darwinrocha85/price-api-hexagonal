@@ -16,7 +16,7 @@
     <dependencies>
         <dependency>
             <groupId>com.rocha.guerrero</groupId>
-            <artifactId>Price-api-domain</artifactId>
+            <artifactId>price-api-domain</artifactId>
             <version>0.0.1-SNAPSHOT</version>
         </dependency>
 
@@ -40,6 +40,26 @@
             <artifactId>h2</artifactId>
             <scope>runtime</scope>
         </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-test</artifactId>
+            <version>3.3.4</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-test-autoconfigure</artifactId>
+            <version>3.3.4</version>
+            <scope>test</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>org.hamcrest</groupId>
+            <artifactId>hamcrest</artifactId>
+            <version>2.2</version>
+            <scope>test</scope>
+        </dependency>
+
     </dependencies>
 
     <build>

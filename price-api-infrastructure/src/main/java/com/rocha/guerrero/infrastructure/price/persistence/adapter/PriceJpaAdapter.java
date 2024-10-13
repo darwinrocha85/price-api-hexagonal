@@ -29,4 +29,9 @@ public class PriceJpaAdapter implements PricePort {
     @Override
     public void saveAll(List<Price> prices) { repository.saveAll(PriceMapper.toEntity(prices)); }
 
+    @Override
+    public void deleteAll() {
+        repository.deleteAll();
+    }
+
 }

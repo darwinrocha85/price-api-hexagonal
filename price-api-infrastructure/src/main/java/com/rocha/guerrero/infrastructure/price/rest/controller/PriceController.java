@@ -38,8 +38,8 @@ public class PriceController {
 
     @GetMapping("rates")
     public List<PriceRes> getRates(@RequestParam("applicationDate") String applicationDate,
-                                   @RequestParam("productId") Long productId,
-                                   @RequestParam("brandId") Long brandId) {
+                                   @RequestParam("productId") long productId,
+                                   @RequestParam("brandId") long brandId) {
 
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd-HH.mm.ss");
         LocalDateTime dateTime = LocalDateTime.parse(applicationDate, formatter);
