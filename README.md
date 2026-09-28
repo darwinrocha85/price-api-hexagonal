@@ -1,4 +1,8 @@
- # price-api-hexagonal (MODULAR)- API REST para Gestión de Tarifas de Precios
+ # price-api-hexagonal (MODULAR) - API REST para Gestión de Tarifas de Precios
+
+> Hermano de [zara-api-hexagonal-no-modular](https://github.com/darwinrocha85/zara-api-hexagonal-no-modular):
+> este es MODULAR (multi-módulo Maven: `price-api-domain`, `price-api-application`,
+> `price-api-infrastructure`); el otro separa por paquetes. Requiere JDK 21+ y Maven.
 
 Este proyecto implementa un controlador REST para gestionar las tarifas de precios de productos en función de diferentes criterios. La arquitectura utilizada es **hexagonal**, y la aplicación está construida sobre **Spring Boot** con **H2** como base de datos en memoria para simplificar las pruebas y la persistencia de datos durante la ejecución.
 
@@ -23,5 +27,11 @@ Este controlador expone los siguientes endpoints:
 | `POST`      | `/prices`               | Crear una nueva tarifa de precio a partir de los datos proporcionados.                                                                                               |
 | `GET`       | `/prices`               | Obtener todas las tarifas de precios almacenadas en la base de datos.                                                                                                 |
 | `GET`       | `/prices/rates`         | Consultar tarifas aplicables a un producto específico en una fecha y hora dada, considerando el ID del producto y el ID de la marca.                                 |
+
+## Cómo correr en local
+```bash
+mvn spring-boot:run   # http://localhost:8080
+```
+Colección Postman: `projectZaraPostman.postman_collection.json`.
 
 Created by DARWIN ROCHA
